@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Get Swifty';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../components/fonts/get_schwifty.ttf');
+}
+
+.home-container {
+    height: calc(100vh);
+    background: url(../../components/images/rickandmorty2.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .home-title {
+    width: 50%;
+    margin-top: 15%;
+    padding-left: 5%;
+  }
+  
+  .home-title h1 {
+    font-family: Get Swifty;
+    font-size: 53px;
+    color: #fff;
+  }
+  
