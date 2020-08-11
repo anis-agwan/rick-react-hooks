@@ -10,7 +10,7 @@ const getAllCharacters = (q_page = '1') => `${ base_url }?page=${ q_page }`;
 const getEpisodesByName = (q_name, q_page = '1') => `${ base_url }?name=${ q_name }&page=${ q_page }`;
 
 const EpisodeList = () => {
-  const [setEpisodes] = useState([]);
+  const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchField, setSearchField] = useState("");
@@ -23,7 +23,7 @@ const EpisodeList = () => {
     setEpisodes(data.results ? data.results : []);
     setPages(data.info && data.info.pages && data.info.pages);
     setCurrentPage(q_page || 1);
-  }
+  } 
 
   const catchFetch = () => {
     setEpisodes([]);
@@ -82,7 +82,7 @@ const EpisodeList = () => {
         handleChange={handleChange} 
         value={searchField}/>
       <Episodes episodes={searchResults} loading={loading} />
-      <Pagination
+      <Pagination className='pagination'
           hidePrevButton
           hideNextButton
           count={ pages }
